@@ -69,3 +69,21 @@
   });
 
 })();
+// --- メニューとフッターに「3つのなぜ」を追加（HTML側に無い場合のみ） ---
+(function () {
+  'use strict';
+  var groups = [
+    { sel: '.overlay-menu nav', html: '<span class="en">WHY J.secret</span>3つのなぜ' },
+    { sel: '.site-footer .flinks', html: '3つのなぜ' }
+  ];
+  groups.forEach(function (g) {
+    var box = document.querySelector(g.sel);
+    if (!box || box.querySelector('a[href$="why.html"]')) return;
+    var concept = box.querySelector('a[href$="concept.html"]');
+    if (!concept) return;
+    var a = document.createElement('a');
+    a.href = concept.getAttribute('href').replace('concept.html', 'why.html');
+    a.innerHTML = g.html;
+    concept.insertAdjacentElement('afterend', a);
+  });
+})();
