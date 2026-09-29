@@ -83,3 +83,5 @@
 .legal-table{ width: 100%; border-collapse: collapse; margin-top: 1rem; }
 .legal-table th, .legal-table td{ border: 1px solid var(--jc-line-light); padding: 0.8rem 1rem; font-size: 0.95rem; text-align: left; vertical-align: top; }
 .legal-table th{ width: 30%; background: rgba(20,16,13,0.04); }
+/* --- 明るい背景セクション内の見出しが白く消える問題の修正 --- */
+body.page .sec-light h1, body.page .sec-light h2, body.page .sec-light h3, body.page .sec-light .mincho{ color: #22201c; }
